@@ -17,9 +17,6 @@ class Window(QWidget):
 		self.resize(480, 320)
 
 	
-
-	
-
 	def Encrypt(self):
 		groupBox = QGroupBox("Encrypt USB Drive")
 		groupBox.setCheckable(True)
@@ -41,36 +38,26 @@ class Window(QWidget):
 		comboBox.move(150, 50)
 		
 		self.btn=QPushButton("Format",self)
-		#self.btn.resize(100,50)
 		self.btn.clicked.connect(self.format)
 	
 		
 		self.label=QLabel()
 		self.label.setText("Enter your Password")
-		#self.label.move(150,150)
-		#self.label.resize(200,30)
 
 		self.textbox=QLineEdit()
 		self.textbox.setEnabled(False)
 		self.textbox.setEchoMode(QLineEdit.Password)
-		#self.textbox.move(150,180)
 		self.textbox.setMaxLength(10)
-		#self.textbox.resize(280,40)
 		
 		self.label1=QLabel()
-		#self.label1.move(150,240)
 		self.label1.setText("Confirm Your Password")
-		#self.label1.resize(200,30)
 
 		self.textbox1=QLineEdit()
 		self.textbox1.setEchoMode(QLineEdit.Password)
 		self.textbox1.setEnabled(False)
-		#self.textbox1.move(150,280)
 		self.textbox1.setMaxLength(10)
-		#self.textbox1.resize(280,40)
 
 		self.btn1=QPushButton("Finish",self)
-		#self.btn.resize(100,50)
 		self.btn1.clicked.connect(self.Finish)
 		
 
@@ -93,10 +80,8 @@ class Window(QWidget):
 		self.groupBox.setCheckable(True)
 		self.groupBox.setChecked(False)
 		
-		
 		btn=QPushButton("Add new key ")
 		
-
 		btn1=QPushButton("Delete Existing key")
 
 		vbox = QVBoxLayout()
@@ -119,23 +104,14 @@ class Window(QWidget):
 		
 		if choices==QMessageBox.Yes:
 			self.progressLabel = QLabel('Progress Bar:', self)
-		
-			#self.window=QVBoxLayout(self)
-			#self.window.addWidget(self.hboxLayoutG)
-			#self.setLayout(self.window)
 
 			# Creating a progress bar and setting the value limits
 			self.progressBar = QProgressBar(self)
 			self.progressBar.setMaximum(100)
 			self.progressBar.setMinimum(0)
-
 			self.btn=QPushButton("Cancel",self)
-			#self.btn.move(50,50)
-			
-
 			
 			# Creating a Horizontal Layout to add all the widgets
-			#self.hboxLayoutG=QGroupBox()
 			self.hboxLayout = QHBoxLayout(self)
 
 			# Adding the widgets
@@ -153,8 +129,7 @@ class Window(QWidget):
 		
 			connect=0
 			while connect<100:
-				connect+=0.001
-				#time.sleep(0.1)				
+				connect+=0.001				
 				self.progressBar.setValue(connect)
 			
 			self.widget.close()
